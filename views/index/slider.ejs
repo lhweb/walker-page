@@ -1,0 +1,21 @@
+<%
+ if(!Array.isArray(sliderData)){
+     %>
+<div data-thumb="<%=sliderData.thumb%>" data-src="<%=sliderData.src%>">
+    <div class="camera_caption fadeFromBottom">
+        <h2><%=sliderData.sliderText%></h2>
+    </div>
+</div>
+<%
+ }else{
+    sliderData.forEach(function(data){
+        %>
+<div data-thumb="<%=data.thumb%>" data-src="<%=data.src%>">
+    <div class="camera_caption fadeFromBottom">
+        <h2><%=data.sliderText%></h2>
+    </div>
+</div>
+<%
+    });
+ };
+  %>

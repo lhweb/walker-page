@@ -1,0 +1,48 @@
+<!--<ul id="filters" class="clearfix">-->
+    <!--<li><span class="filter active" data-filter="app card icon logo web">All</span></li>-->
+    <!--<li><span class="filter" data-filter="app web">Print</span></li>-->
+    <!--<li><span class="filter" data-filter="icon web card">Photography</span></li>-->
+    <!--<li><span class="filter" data-filter="web app icon card">Web</span></li>-->
+    <!--<li><span class="filter" data-filter="icon app web logo">Animation</span></li>-->
+<!--</ul>-->
+<!--<div id="portfoliolist">-->
+<%
+if(!Array.isArray(impressionData)){
+%>
+<div class="portfolio <%=impressionData.dataCat%>" data-cat="<%=impressionData.dataCat%>">
+    <div class="portfolio-wrapper">
+        <a class="popup-with-zoom-anim" href="#small-dialog1" data-para="<%=impressionData.para%>">
+            <img width="280" height="163" src="/<%=impressionData.src%>" alt="Image 2" />
+        </a>
+        <div class="label">
+            <div class="label-text">
+                <a class="text-title"><%=impressionData.textTitle%></a>
+                <span class="text-category"><%=impressionData.textCategory%></span>
+            </div>
+            <div class="label-bg"></div>
+        </div>
+    </div>
+</div>
+<%
+}else{
+impressionData.forEach(function(data){
+%>
+<div class="portfolio <%=data.dataCat%>" data-cat="<%=data.dataCat%>">
+    <div class="portfolio-wrapper">
+        <a class="popup-with-zoom-anim" href="#small-dialog1" data-para="<%=data.para%>">
+            <img width="280" height="163" src="/<%=data.src%>" alt="Image 2" />
+        </a>
+        <div class="label">
+            <div class="label-text">
+                <a class="text-title"><%=data.textTitle%></a>
+                <span class="text-category"><%=data.textCategory%></span>
+            </div>
+            <div class="label-bg"></div>
+        </div>
+    </div>
+</div>
+<%
+});
+};
+%>
+<!--</div>-->
